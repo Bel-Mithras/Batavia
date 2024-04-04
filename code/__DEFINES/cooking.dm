@@ -62,7 +62,7 @@
 #define DF_BASKET		"deep fryer basket"
 #define AF_BASKET		"air fryer basket"
 #define OVEN			"oven"
-#define GRILL			"grill"
+#define GRILL			"grill grate"
 
 //Stove temp settings.
 #define J_LO "Low"
@@ -88,9 +88,9 @@
 #define CWJ_BASE_QUAL_REDUCTION 5
 
 //Food Quality Tiers
-#define CWJ_QUALITY_GARBAGE			0.4
-#define CWJ_QUALITY_GROSS			0.6
-#define CWJ_QUALITY_MEH				0.8
+#define CWJ_QUALITY_GARBAGE			-2
+#define CWJ_QUALITY_GROSS			-1.5
+#define CWJ_QUALITY_MEH				0.5
 #define CWJ_QUALITY_NORMAL			1
 #define CWJ_QUALITY_GOOD			1.2
 #define CWJ_QUALITY_VERY_GOOD		1.4
