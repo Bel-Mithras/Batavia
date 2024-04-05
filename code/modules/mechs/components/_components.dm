@@ -56,18 +56,17 @@
 			thing.emp_act(severity)
 	else return
 
-/obj/item/mech_component/examine(mob/user)
-	. = ..()
+/obj/item/mech_component/examine(mob/user, extra_description = "")
 
 	if(.)
 		if(ready_to_install())
-			to_chat(user, SPAN_NOTICE("It is ready for installation."))
+			extra_description += SPAN_NOTICE("It is ready for installation.")
 		else
 			show_missing_parts(usr)
 		if(emp_shielded)
-			to_chat(user, SPAN_NOTICE("This component is fitted with a Faraday cage, making it resistant against electromagnetic pulses."))
+			extra_description += SPAN_NOTICE("This component is fitted with a Faraday cage, making it resistant against electromagnetic pulses.")
 		if(front_mult != 1 || side_mult != 1 || rear_mult != 1)
-			to_chat(user, SPAN_NOTICE("This component has uneven armor distribution. Frontal armor is multiplied by [front_mult], side armor by [side_mult] and the rear plates by [rear_mult]"))
+			extra_description += SPAN_NOTICE("This component has uneven armor distribution. Frontal armor is multiplied by [front_mult], side armor by [side_mult] and the rear plates by [rear_mult]")
 
 	/*
 	if(reinforcement)
@@ -77,7 +76,7 @@
 	*/
 
 	var/damage_string = src.get_damage_string()
-	to_chat(user, "The [src.name] [src.gender == PLURAL ? "are" : "is"] [damage_string].")
+	extra_description += "The [src.name] [src.gender == PLURAL ? "are" : "is"] [damage_string]."
 
 
 /*
@@ -94,8 +93,7 @@
 */
 
 
-
-
+	..(user, extra_description)
 
 //These icons have multiple directions but before they're attached we only want south.
 /obj/item/mech_component/set_dir()
