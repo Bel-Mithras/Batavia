@@ -7,3 +7,6 @@
 ## CONTRIBUTING
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md)
+
+
+![](https://github.com/Bel-Mithras/Batavia/blob/master/codereviewed.png)
